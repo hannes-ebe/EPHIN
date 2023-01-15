@@ -1,0 +1,46 @@
+FILE FORMAT LEVEL 3 PHA
+------------------------
+
+filename: EPHyydoy.l3pha
+
+Time tags
+---------
+	integer (5 elements)
+(1)	year 
+(2)	month
+(3)	day in month
+(4)	day of year
+(5)	ms of day
+
+Data
+----
+	integer (3 elements)
+(6)	coincidence (0...12)
+(7)	segment in A (0...5)
+(8)	segment in B (0...5)
+(9)	priority bit (0,1)
+
+	float (10 elements)
+(10)	energy loss in A [keV]
+(11)	full scale A [keV]
+(12)	energy loss in B [keV]
+(13)	full scale B [keV]
+(14)	energy loss in C [keV]
+(15)	full scale C [keV]
+(16)	energy loss in D [keV]
+(17)	full scale D [keV]
+(18)	energy loss in E [keV]
+(19)	full scale E [keV]
+
+	integer (5 elements)
+(20)	status word
+(21)	ring on/off (1: ring off; 0: ring on)
+(22)	number of counts for coincidence in L1 SCI-file
+(23)	number of pha lines for coincidence
+(24)	overflow flag (e.g. 12300 refers to overflow in detectors A,B,C)
+
+NOTES
+-----
+(1) minutes with consecutive duplicates (more than 3 identical pha lines) deleted, when no overflow occured
+(2) minutes with segments of A and B > 5 deleted
+(3) overflow.l3pha: same format as above, whole mission scanned 
